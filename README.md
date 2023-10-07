@@ -276,10 +276,10 @@ for i in range(num):
     numeros.append(numero)
     suma += numero
 
-# Calculamos el promedio
+ #Calculamos el promedio
 promedio = suma / num
 
-# Calculamos la mediana
+ #Calculamos la mediana
 numeros.sort()
 mediana = 0
 
