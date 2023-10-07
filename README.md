@@ -1,5 +1,5 @@
 EJERCICIO #1
-C++
+# C++
 // Función para calcular el cargo por estacionamiento
 #include <iostream>
 #include <iomanip>
@@ -44,8 +44,8 @@ int main() {
     return 0;
 }
 ________________________________________________________________________________________________________________________________
-PYTHON
-# Función para calcular el cargo por estacionamiento
+# PYTHON
+
 def calcularCargos(horas_estacionado):
     tarifa_base = 2.00
     tarifa_adicional_por_hora = 0.50
@@ -77,7 +77,7 @@ total_recibos = cargo_c1 + cargo_c2 + cargo_c3
 print(f"Total                    ${total_recibos:.2f}")
 
 SEGUNDO EJERCICIO-----------------------------------------------------------------------------------------------------------
-C++
+# C++
 #include <iostream>
 
 using namespace std;
@@ -124,7 +124,7 @@ int main() {
     return 0;
 }
 ___________________________________________________________________________________________________________________________
-PYTHON
+# PYTHON
 def main():
     filas = int(input("Ingrese el número de filas de la matriz: "))
     columnas = int(input("Ingrese el número de columnas de la matriz: "))
@@ -150,7 +150,7 @@ def main():
 if _name_ == "_main_":
     main()
 TERCER EJERCICIO---------------------------------------------------------------------------------------------------------------------
-C++
+# C++
 #include <iostream>
 using namespace std;
 
@@ -186,7 +186,7 @@ int main() {
     return 0;
 }
 ___________________________________________________________________________________________________________________________
-PYTHON
+# PYTHON
 def esPerfecto(numero):
     suma_divisores = 1  # Inicializamos con 1 porque todo número es divisible por 1
     
@@ -207,4 +207,91 @@ if esPerfecto(numero):
     print(f"{numero} es un número perfecto.")
 else:
     print(f"{numero} no es un número perfecto.")
+    
 CUARTO EJERCICIO----------------------------------------------------------------------------------------------------------------
+# c++
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    int num;
+
+    cout << "Ingrese la cantidad de numeros: ";
+    cin >> num;
+
+    if (num <= 0) {
+        cout << "La cantidad de numeros debe ser mayor que cero" << endl;
+        return 1;
+    }
+
+    vector<double> numeros;
+    double suma = 0;
+
+    cout << "Ingrese los numeros, uno por uno: " << endl;
+    for (int i = 0; i < num; i++) {
+        double numero;
+        cin >> numero;
+        numeros.push_back(numero);
+        suma += numero;
+    }
+
+    // Calculamos el promedio
+    double promedio = suma / num;
+
+    // Calculamos la mediana
+    double mediana;
+
+    if (num % 2 == 0) {
+        // Si la cantidad de números es par, la mediana es el promedio de los dos números del medio.
+        int medio1 = (num / 2) - 1;
+        int medio2 = num / 2;
+        mediana = (numeros[medio1] + numeros[medio2]) / 2.0;
+    } else {
+        // Si la cantidad de números es impar, la mediana es el número del medio.
+        int medio = num / 2;
+        mediana = numeros[medio];
+    }
+
+    cout << "El promedio de los numeros ingresados es: " << promedio << endl;
+    cout << "La mediana de los números ingresados es: " << mediana << endl;
+
+    return 0;
+}
+
+# PYTHON
+num = int(input("Ingrese la cantidad de numeros: "))
+
+if num <= 0:
+    print("La cantidad de numeros debe ser mayor que cero")
+    exit(1)
+
+numeros = []
+suma = 0
+
+print("Ingrese los numeros, uno por uno:")
+for i in range(num):
+    numero = float(input())
+    numeros.append(numero)
+    suma += numero
+
+# Calculamos el promedio
+promedio = suma / num
+
+# Calculamos la mediana
+numeros.sort()
+mediana = 0
+
+if num % 2 == 0:
+    # Si la cantidad de números es par, la mediana es el promedio de los dos números del medio.
+    medio1 = (num // 2) - 1
+    medio2 = num // 2
+    mediana = (numeros[medio1] + numeros[medio2]) / 2.0
+else:
+    # Si la cantidad de números es impar, la mediana es el número del medio.
+    medio = num // 2
+    mediana = numeros[medio]
+
+print("El promedio de los numeros ingresados es:", promedio)
+print("La mediana de los números ingresados es:", mediana)
